@@ -7,3 +7,9 @@ function getParameterByName(name) {
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
+function showParameters() {
+    var csh = getParameterByName("csh");
+    document.getElementById("parameters").innerHTML += "<p>CSH=" + csh + "</p>";
+}
+
+window.onload = codeAddress;
