@@ -12,4 +12,4 @@ function showParameters() {
     document.getElementById("parameters").innerHTML += "<p>CSH=" + csh + "</p>";
 }
 
-window.onload = codeAddress;
+window.onload = showParameters;
