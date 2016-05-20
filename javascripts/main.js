@@ -12,4 +12,13 @@ function showParameters() {
     document.getElementById("parameters").innerHTML += "<p>CSH=" + csh + "</p>";
 }
 
-window.onload = showParameters;
+function onMessage(e) {
+    if (e.data && e.data.indexOf && e.data.indexOf("ANCILECSH") >= 0) {
+        e.source.postMessage("This is a message from github!", "https://jsbin.com");
+    }
+}
+
+window.onload = function() {
+    showParameters;
+    window.addEventListener("message", onMessage);
+}
